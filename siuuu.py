@@ -1,7 +1,7 @@
 numbers = []
 
 for i in range(5):
-    number = float(input("Podaj liczbę: "))
+    number = float(input("Proszę użytkownika o podanie 5 liczb: "))
     numbers.append(number)
 suma = sum(numbers)
 najwieksza = max(numbers)
