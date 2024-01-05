@@ -1,0 +1,46 @@
+from random import randint
+class hampter:
+    def __init__(self, _imie, długosc_siersc) -> None:
+        self.imie = _imie
+        self.siersc = długosc_siersc
+        self.atak = randint(1,10)
+
+    def inf(self):
+        print("test")
+        print(f"nazywam się {self.imie}")
+        print(f"zadaje {self.atak} dmg")
+        print(f"posiadam atrybut {self.siersc} sierść")
+
+h = hampter("hampy", "długa")
+h.inf()
+
+
+
+class dom:
+    def __init__(self, _wielkosc, _czystosc):
+        self.wielkosc = _wielkosc
+        self.czystosc = _czystosc
+
+    def infor(self):
+        print(10*"-")
+        print(f"jestem {self.wielkosc} domem")
+        print(f"poziom czystości {self.czystosc}")
+
+d = dom("dużym", "7/10")
+d.infor()
+
+
+
+
+class nauczyciel_mat:
+    def __init__(self, _surowosc, _uczenie):
+        self.surowosc = _surowosc
+        self.uczenie = _uczenie
+
+    def informat(self):
+        print(10*"-")
+        print(f"skala poziomu nauczania {self.uczenie}")
+        print(f"skala surowości {self.surowosc}")
+
+n = nauczyciel_mat("5/10", "7/10")
+n.informat()
