@@ -1,0 +1,49 @@
+class Uczen:
+    liczba_uczniow = 0
+
+    def __init__(self, imie, nazwisko) -> None:
+        self.imie = imie
+        self.nazwisko = nazwisko
+        self.oceny_mat = [2, 3, 4, 5, 6]
+        self.srednia_ocen_mat = self.oblicz_srednia(self.oceny_mat)
+        self.oceny_ang = [5, 6, 6, 6, 6, 6, 6, 6]
+        self.srednia_ocen_ang = self.oblicz_srednia(self.oceny_ang)
+        Uczen.liczba_uczniow += 1
+
+    @staticmethod
+    def oblicz_srednia(oceny):
+        if oceny:
+            return sum(oceny) / len(oceny)
+        else:
+            return 0
+
+    def inf(self):
+        print(f"imię {self.imie}")
+        print(f"nazwisko {self.nazwisko}")
+        print(f"matematyka {self.oceny_mat}")
+        print(f"średnia matematyka {self.srednia_ocen_mat}")
+        print(f"ang {self.oceny_ang}")
+        print(f"średnia ang {self.srednia_ocen_ang}")
+
+    @classmethod
+    def liczba_stworzonych_uczniow(cls):
+        return cls.liczba_uczniow
+
+    def zmien_imie(self, nowe_imie):
+        self.imie = nowe_imie
+
+    def usun_ocene(self, wartosc):
+        if wartosc in self.oceny_mat:
+            self.oceny_mat.remove(wartosc)
+        if wartosc in self.oceny_ang:
+            self.oceny_ang.remove(wartosc)
+
+# Testy
+ucz1 = Uczen("Jan", "Kowalski")
+print("Liczba uczniów:", Uczen.liczba_stworzonych_uczniow())  # 1
+ucz2 = Uczen("Anna", "Nowak")
+print("Liczba uczniów:", Uczen.liczba_stworzonych_uczniow())  # 2
+
+ucz1.zmien_imie("Alex")
+ucz1.usun_ocene(6)
+ucz1.inf()
